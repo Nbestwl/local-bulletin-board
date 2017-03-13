@@ -4,18 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { UserLoginComponent } from './user-login/user-login.component';
-import { routes } from './app.router';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { routes } from './app.router';
 
-import {AUTH_PROVIDERS} from 'angular2-jwt';
-import {Auth} from './auth-service.service';
+import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { Auth } from './auth-service.service';
+import { AuthGuard } from './auth-guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserLoginComponent,
     HomeComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,8 @@ import {Auth} from './auth-service.service';
   ],
   providers: [
     AUTH_PROVIDERS,
-    Auth
+    Auth,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

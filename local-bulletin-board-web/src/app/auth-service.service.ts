@@ -6,6 +6,7 @@ declare var Auth0Lock: any;
 
 @Injectable()
 export class Auth {
+  
   // Configure Auth0
   lock = new Auth0Lock('Nnsu1xh8jV4GPjt1mCTmBG4CyTGtw04h', 'leiwang.auth0.com', {});
 
@@ -13,6 +14,7 @@ export class Auth {
     // Add callback for lock `authenticated` event
     this.lock.on("authenticated", (authResult:any) => {
       localStorage.setItem('id_token', authResult.idToken);
+      //localStorage.setItem('profile', JSON.stringify(profile));
     });
   }
 
@@ -30,6 +32,7 @@ export class Auth {
   public logout() {
     // Remove token from localStorage
     localStorage.removeItem('id_token');
+    console.log("Logout successsful");
   }
-}
 
+}

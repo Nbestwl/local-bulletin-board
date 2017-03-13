@@ -1,0 +1,11 @@
+<div class="alert alert-success" *ngIf="auth.authenticated()"> 
+	<strong>
+		You are logged in 
+	</strong>
+</div>
+
+<div class="alert alert-danger" *ngIf="!auth.authenticated()"> 
+	<strong>	
+		You are logged Out 
+	</strong>
+</div>

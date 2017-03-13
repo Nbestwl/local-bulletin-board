@@ -9,7 +9,6 @@ import {Auth} from './auth-service.service';
 })
 
 export class AppComponent {
-  
   constructor(private auth:Auth){
     
   }

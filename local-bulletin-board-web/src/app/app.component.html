@@ -1,16 +1,18 @@
 <div class="nav">
-      <div class="container">
-        <ul class="pull-left">
-          <li><a>local-bulletin-board</a></li>
-        </ul>
-        <ul class="pull-right">
-          <li><a routerLink="home">Home</a></li>
-          <li><a routerLink="user-login" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</a></li>
-          <li><a routerLink="user-login" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</a></li>
-    	</ul>
+  <div class="container">
+    <ul class="pull-left">
+      <li>Local-Bulletin-Board</li>
+    </ul>
+    <ul class="pull-right">
+      <li><a routerLink="/" *ngIf="!auth.authenticated()">Home</a></li>
+      <li><a routerLink="/profile" *ngIf="auth.authenticated()">Profile</a></li>
+      <li><a routerLink="#" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</a></li>
+      <li><a routerLink="#" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</a></li>
+    </ul>
 	</div>
 </div>
 
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+
