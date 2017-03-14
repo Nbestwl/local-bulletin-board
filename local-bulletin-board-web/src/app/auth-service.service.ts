@@ -1,5 +1,7 @@
 import { Injectable }      from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
+import { Router } from '@angular/router';
+import 'rxjs/add/operator/filter';
 
 // Avoid name not found warnings
 declare var Auth0Lock: any;
@@ -10,11 +12,22 @@ export class Auth {
   // Configure Auth0
   lock = new Auth0Lock('Nnsu1xh8jV4GPjt1mCTmBG4CyTGtw04h', 'leiwang.auth0.com', {});
 
-  constructor() {
-    // Add callback for lock `authenticated` event
-    this.lock.on("authenticated", (authResult:any) => {
-      localStorage.setItem('id_token', authResult.idToken);
-      //localStorage.setItem('profile', JSON.stringify(profile));
+  constructor(public router: Router) {
+
+    this
+    .router
+    .events
+    .filter(event => event.constructor.name === 'NavigationStart')
+    .filter(event => (/access_token|id_token|error/).test(event.url))
+    .subscribe(() => {
+      // Add callback for lock `authenticated` event
+      this.lock.resumeAuth(window.location.hash, (error, authResult) => {
+        if (error) return console.log(error);
+        localStorage.setItem('id_token', authResult.idToken);
+        //localStorage.setItem('profile', JSON.stringify(profile));
+        console.log("The userID is : " + 'id_token');
+        this.router.navigate(['/profile']);
+      });
     });
   }
 

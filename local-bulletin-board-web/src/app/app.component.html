@@ -6,8 +6,8 @@
     <ul class="pull-right">
       <li><a routerLink="/" *ngIf="!auth.authenticated()">Home</a></li>
       <li><a routerLink="/profile" *ngIf="auth.authenticated()">Profile</a></li>
-      <li><a routerLink="#" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</a></li>
-      <li><a routerLink="#" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</a></li>
+      <li><a (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</a></li>
+      <li><a (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</a></li>
     </ul>
 	</div>
 </div>

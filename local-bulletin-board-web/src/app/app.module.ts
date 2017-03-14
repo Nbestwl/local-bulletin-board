@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { routes } from './app.router';
 
-import { AUTH_PROVIDERS } from 'angular2-jwt';
 import { Auth } from './auth-service.service';
 import { AuthGuard } from './auth-guard.service';
 
@@ -25,7 +24,6 @@ import { AuthGuard } from './auth-guard.service';
     routes
   ],
   providers: [
-    AUTH_PROVIDERS,
     Auth,
     AuthGuard
   ],
