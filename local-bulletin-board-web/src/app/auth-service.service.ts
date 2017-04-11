@@ -10,7 +10,7 @@ declare var Auth0Lock: any;
 export class Auth {
   
   // Configure Auth0
-  lock = new Auth0Lock('Nnsu1xh8jV4GPjt1mCTmBG4CyTGtw04h', 'leiwang.auth0.com', {});
+  lock = new Auth0Lock('7EUgEHxwA6WUv2kw04qmT9tA5lYq61xq', '62lwang.auth0.com', {});
 
   constructor(public router: Router) {
 

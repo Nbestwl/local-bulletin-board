@@ -10,6 +10,7 @@ import { routes } from './app.router';
 
 import { Auth } from './auth-service.service';
 import { AuthGuard } from './auth-guard.service';
+import { Ng2Bs3ModalModule } from '../../node_modules/ng2-bs3-modal/ng2-bs3-modal';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AuthGuard } from './auth-guard.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routes
+    routes,
+    Ng2Bs3ModalModule
   ],
   providers: [
     Auth,
