@@ -18,7 +18,7 @@ export class Auth {
     .router
     .events
     .filter(event => event.constructor.name === 'NavigationStart')
-    .filter(event => (/access_token|id_token|error/).test(event.url))
+    .filter(event => (/access_token|id_token|error/).test(window.location.search))
     .subscribe(() => {
       // Add callback for lock `authenticated` event
       this.lock.resumeAuth(window.location.hash, (error, authResult) => {
