@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {Auth} from './auth-service.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   moduleId: module.id,
