@@ -24,7 +24,8 @@ import { Ng2Bs3ModalModule } from '../../node_modules/ng2-bs3-modal/ng2-bs3-moda
     FormsModule,
     HttpModule,
     routes,
-    Ng2Bs3ModalModule
+    Ng2Bs3ModalModule,
+    BrowserAnimationsModule
   ],
   providers: [
     Auth,

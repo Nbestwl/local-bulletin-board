@@ -1,17 +1,19 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="auth.authenticated()">
   <h3>Welcome!</h3>
   <br>
   <br>
   <div class="row">
+
     <div class="col-lg-4">
     	<div>
-    		<button class="new_post">New Post</button>
+    		<button class="new_post" (click)="view_post()">New Post</button>
     	</div>
     	<div>
-    		<button class="view_queue">View Queue</button>
+    		<button class="view_queue" (click)="view_queue()">View Queue</button>
     	</div>
     </div>
-    <div class="col-lg-8">
+
+    <div class="col-lg-8" *ngIf="get_view_post()">
       <form>
   			<div class="form-group">
     			<label for="formGroupExampleInput">Post Title</label>
@@ -26,8 +28,22 @@
   			</div>
       </form>
 
-      <input type="checkbox" checked data-toggle="toggle">
+      <label>Mirror to Social</label>
+      <br>
+      <label class="switch">
+  			<input type="checkbox">
+  			<div class="slider round"></div>
+			</label>
+      <br>
+      <br>
+      <button type="button" class="btn btn-primary btn-lg btn-block">Confirm Post</button>
     </div>
+
+    <div class="col-lg-8" *ngIf="get_view_queue()">
+      <h3>Here are the queues</h3>
+    </div>
+
+
   </div>
 </div>
 
