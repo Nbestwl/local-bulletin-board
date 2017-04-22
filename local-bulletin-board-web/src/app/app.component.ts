@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import {Auth} from './auth-service.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -10,7 +9,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 
 export class AppComponent {
-  constructor(private auth:Auth){
+  constructor(){
     
   }
 

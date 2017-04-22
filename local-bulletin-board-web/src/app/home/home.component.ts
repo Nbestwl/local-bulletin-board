@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Auth} from '../auth-service.service';
 
 @Component({
   moduleId: module.id,
@@ -10,7 +9,7 @@ import {Auth} from '../auth-service.service';
 
 export class HomeComponent implements OnInit {
 
-  constructor(private auth:Auth){}
+  constructor() {}
 
   ngOnInit() {
   	console.log("Loading home page...");
